@@ -1,0 +1,23 @@
+<div class="fruit">
+  <div class="fruit-image" style="background-image: url(<%= fruit.image_url %>);">
+  </div>
+
+  <div class="fruit-info">
+    <dl>
+      <dt>Name:</dt>
+      <dd><%= fruit.name %></dd>
+
+      <dt>Colour:</dt>
+      <dd><%= fruit.colour %></dd>
+
+      <dt>Prickly?</dt>
+      <dd><%= fruit.prickly %></dd>
+    </dl>
+  </div>
+
+  <div class="options">
+    <%= link_to 'Show', fruit %>
+    <%= link_to 'Edit', edit_fruit_path(fruit) %>
+    <%= link_to 'Destroy', fruit, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+  </div>
+</div>

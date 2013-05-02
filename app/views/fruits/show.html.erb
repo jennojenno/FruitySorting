@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fruit.name %>
+</p>
+
+<p>
+  <b>Colour:</b>
+  <%= @fruit.colour %>
+</p>
+
+<p>
+  <b>Prickly:</b>
+  <%= @fruit.prickly %>
+</p>
+
+
+<%= link_to 'Edit', edit_fruit_path(@fruit) %> |
+<%= link_to 'Back', fruits_path %>

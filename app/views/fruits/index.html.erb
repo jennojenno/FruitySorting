@@ -1,0 +1,15 @@
+<h1>My Amazing Fruit Sorter</h1>
+
+<div id="fruits">
+  <ol>
+    <% @fruits.each do |fruit| %>
+      <li>
+        <%= render :partial => 'fruits/fruit', :locals => { :fruit => fruit } %>
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+<div class="nav">
+  <%= link_to 'New Fruit', new_fruit_path %>
+</div>
