@@ -2,7 +2,7 @@ class FruitsController < ApplicationController
   # GET /fruits
   # GET /fruits.json
   def index
-    @fruits = Fruit.all
+    @fruits = Fruit.order(:position).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -68,6 +68,14 @@ class FruitsController < ApplicationController
       end
     end
   end
+
+
+def update_position
+     params["results"].each do |whatever, result|
+        Fruit.update_all("position = #{result[1]}", "id = #{result[0]}")
+     end 
+     render :text => "Nice one" 
+end 
 
   # DELETE /fruits/1
   # DELETE /fruits/1.json
